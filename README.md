@@ -21,21 +21,24 @@ RA: 164961
 Email: [brenomarsn@gmail.com] (brenomarsn@gmail.com) 
 
 GitHub: [https://github.com/breno-martins] (https://github.com/breno-martins) 
-Jéssica Pereira:
+
+*Jéssica Pereira:*
 
 RA: 170373 
 
 Email: [jessica.pereira1764@gmail.com] (jessica.pereira1764@gmail.com) 
 
 GitHub: [https://github.com/j-pereira] (https://github.com/j-pereira) 
- Matheus Evers:
+ 
+ *Matheus Evers:*
 
 RA: 174505 
 
 Email: [matheus.evers@outlook.com] (matheus.evers@outlook.com) 
 
 GitHub: [https://github.com/eversmth] (https://github.com/eversmth) 
-Tales Abdo:
+
+*Tales Abdo:*
 
 RA: 177306 
 
