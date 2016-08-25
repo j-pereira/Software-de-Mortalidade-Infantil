@@ -1,4 +1,4 @@
-## Software de Mortalidade Infantil e Neonatal - Projeto de POO II  
+﻿## Software de Mortalidade Infantil e Neonatal - Projeto de POO II  
 
  
 
@@ -76,4 +76,4 @@ Os dados estão disponibilizados em CSV, JSON, XML e RDF.
 
 Consulta por ano da taxa de morte infantil. 
 
-![Image of Graphic] (https://github.com/j-pereira/Software-de-Mortalidade-Infantil/blob/master/grafico.png)
+![Image of Graphic] (https://github.com/j-pereira/Software-de-Mortalidade-Infantil/blob/master/Documentos/ExemploGrafico.png)
