@@ -24,10 +24,15 @@ import org.json.JSONObject;
 
 /**
  *
- * @author Jéssica, Breno
+ * @author Jéssica
  */
 public class Dados {
     
+    /**
+     * 
+     * @param jsonString
+     * @return List Dado 
+     */
     public static List<Dado> parseDataFromJsonString(String jsonString) {
         List<Dado> listaDados = new ArrayList<>();
         
@@ -50,11 +55,25 @@ public class Dados {
         return listaDados;
     }
     
+    /**
+     * 
+     * @param url
+     * @return jsonString
+     * @throws IOException 
+     */
+    
+    
     public static String readFileFromUrl(URL url) throws IOException {
         InputStreamReader is = new InputStreamReader(url.openStream());
         String jsonString = getStringFromInputStream(is);
         return jsonString;
     }
+    
+    /**
+     * 
+     * @param is InputStreamReader
+     * @return String
+     */
     
     private static String getStringFromInputStream(InputStreamReader is) {
 
@@ -85,6 +104,13 @@ public class Dados {
 
     }
     
+    /**
+     * 
+     * @param file File
+     * @return List Dado
+     */
+    
+    
     public static List<Dado> getDataFromFile(File file) {
         List<Dado> dados = new ArrayList<>();
         ObjectInputStream reader = null;
@@ -107,6 +133,12 @@ public class Dados {
         
         return dados;
     }
+    
+    /**
+     * 
+     * @param dados List Dado
+     * @param file File
+     */
     
     public static void saveDataInFile(List<Dado> dados, File file) {
         ObjectOutputStream writer = null;

@@ -17,6 +17,11 @@ public class Dado implements Serializable {
     
     }
     
+    /**
+    * @param tipo String
+    * @param ano int
+    * @param taxa float
+    */
     public Dado(String tipo, int ano, float taxa){
         this.tipo = tipo;
         this.ano = ano;
