@@ -27,7 +27,6 @@ public class Main {
      */
     public static void main(String[] args) {
         try {
-            // TODO code application logic here
             File file = new File("dados.dat");
             
             List<Dado> dados = new ArrayList<>();
