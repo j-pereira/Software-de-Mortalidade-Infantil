@@ -19,6 +19,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -26,6 +30,10 @@ import java.util.logging.Logger;
  */
 public class TelaResultado extends javax.swing.JFrame {
 
+    String tipo;
+    String anoInicio;
+    String anoFinal;
+    String taxa;
     /**
      * Creates new form TelaResultado
      */
@@ -59,6 +67,25 @@ public class TelaResultado extends javax.swing.JFrame {
                 this.tblResultado.getModel().setValueAt(dados.get(i).getTaxa(), i, 2);
             }
             
+          
+            
+            TableRowSorter sorter = null;  
+            DefaultTableModel model = (DefaultTableModel) tblResultado.getModel();  
+            sorter = new TableRowSorter<TableModel>(model);  
+            tblResultado.setRowSorter(sorter);
+            
+        
+            /*
+           
+            */
+            List<RowFilter<Object,Object>> rfs = new ArrayList<RowFilter<Object,Object>>(2);
+            rfs.add(RowFilter.regexFilter("Infant", 0));
+            rfs.add(RowFilter.regexFilter("1940", 1));
+            RowFilter<Object,Object> af = RowFilter.andFilter(rfs);
+            
+            sorter.setRowFilter(af);
+            //sorter.setRowFilter(RowFilter.regexFilter("1950"));
+            
         } catch (MalformedURLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -85,6 +112,10 @@ public class TelaResultado extends javax.swing.JFrame {
         btnVoltar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblResultado = new javax.swing.JTable();
+        teste1 = new javax.swing.JLabel();
+        teste2 = new javax.swing.JLabel();
+        teste3 = new javax.swing.JLabel();
+        teste4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,6 +166,14 @@ public class TelaResultado extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblResultado);
 
+        teste1.setText("jLabel2");
+
+        teste2.setText("jLabel3");
+
+        teste3.setText("jLabel4");
+
+        teste4.setText("jLabel5");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -151,7 +190,13 @@ public class TelaResultado extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(287, 287, 287)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(152, 152, 152)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(teste1)
+                            .addComponent(teste2)
+                            .addComponent(teste3)
+                            .addComponent(teste4)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(442, 442, 442)
                         .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -168,8 +213,19 @@ public class TelaResultado extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(104, 104, 104)
+                                .addComponent(teste1)
+                                .addGap(18, 18, 18)
+                                .addComponent(teste2)
+                                .addGap(18, 18, 18)
+                                .addComponent(teste3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(teste4)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(btnVoltar)
                 .addGap(22, 22, 22))
@@ -242,5 +298,16 @@ public class TelaResultado extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblResultado;
+    private javax.swing.JLabel teste1;
+    private javax.swing.JLabel teste2;
+    private javax.swing.JLabel teste3;
+    private javax.swing.JLabel teste4;
     // End of variables declaration//GEN-END:variables
+    public void Recebe(String Tipo, String AnoInicio, String AnoFinal, String Taxa){
+        this.tipo = Tipo;
+        this.anoInicio = AnoInicio;
+        this.anoFinal = AnoFinal;
+        this.taxa = Taxa;
+    }
+
 }
