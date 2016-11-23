@@ -9,6 +9,7 @@ package com.dados;
 import static com.dados.Dados.getDataFromFile;
 import static com.dados.Dados.readFileFromUrl;
 import static com.dados.Dados.saveDataInFile;
+import com.telas.TelaMain;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -35,9 +36,9 @@ public class LineChartSample {
     public static int taxa;
 
     public LineChart<Number, Number> getChart() {
-        final NumberAxis xAxis = new NumberAxis(1900,2016,1);
-        xAxis.setLowerBound(1900);
-        xAxis.setUpperBound(2016);
+        final NumberAxis xAxis = new NumberAxis((anoInicio-1),(anoFinal+1),1);
+        xAxis.setLowerBound(anoInicio-1);
+        xAxis.setUpperBound(anoFinal+1);
         final NumberAxis yAxis = new NumberAxis(0,110,1);
         yAxis.setLowerBound(0);
         yAxis.setUpperBound(110);
@@ -81,9 +82,9 @@ public class LineChartSample {
                 }
             }
         }catch (MalformedURLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaMain.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TelaMain.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         lineChart.getData().addAll(series1);
